@@ -25,7 +25,8 @@ TestGuiAudioProcessorEditor::TestGuiAudioProcessorEditor (TestGuiAudioProcessor&
 	doc1.setLayoutMode(MultiDocumentPanel::LayoutMode::MaximisedWindowsWithTabs);
 	doc1.addDocument(&p1, Colours::black, false); //Tab1
 	doc1.addDocument(&p2, Colours::black, false); //Tab2
-	doc1.setActiveDocument(&p1);	//Default : Tab1 is active s
+	doc1.setActiveDocument(&p1);	//Default : Tab1 is active 
+	doc1.setRepaintsOnMouseActivity(true);
 	
 	//Main window : resizable with the corner
 	setResizable(true, true);
@@ -68,7 +69,7 @@ void TestGuiAudioProcessorEditor::resized()
 void TestGuiAudioProcessorEditor::setLook() {
 
 	//Black, royalblue and white are used
-	p1.look1.setColour(Slider::rotarySliderFillColourId, Colours::royalblue);7
+	p1.look1.setColour(Slider::rotarySliderFillColourId, Colours::royalblue);
 	p1.look1.setColour(Slider::thumbColourId, Colours::royalblue);
 	p1.look1.setColour(Slider::trackColourId, Colours::royalblue);
 	p1.look1.setColour(Slider::textBoxOutlineColourId, getLookAndFeel().findColour(ResizableWindow::backgroundColourId));

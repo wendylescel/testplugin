@@ -39,7 +39,6 @@ private:
 	Slider sl3;
 	Slider sl4;
 	Slider sl5;
-	auto areasl;
 
 	//TableListBox tablelist;
 
