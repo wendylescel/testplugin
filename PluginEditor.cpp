@@ -17,20 +17,21 @@
 TestGuiAudioProcessorEditor::TestGuiAudioProcessorEditor (TestGuiAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
-
+	//Set the look and feel of the plugin
 	setLook();
 	
+	//Doc1 : MultiDocumentPanel -> create files for each tab
 	addAndMakeVisible(doc1);
 	doc1.setLayoutMode(MultiDocumentPanel::LayoutMode::MaximisedWindowsWithTabs);
-	doc1.addDocument(&p1, Colours::black, false);
-	doc1.addDocument(&p2, Colours::black, false);
-	doc1.setActiveDocument(&p1);
+	doc1.addDocument(&p1, Colours::black, false); //Tab1
+	doc1.addDocument(&p2, Colours::black, false); //Tab2
+	doc1.setActiveDocument(&p1);	//Default : Tab1 is active s
 	
-	//Paramétrage fenêtre principale
+	//Main window : resizable with the corner
 	setResizable(true, true);
 	setSize(800, 600);
 
-	//logo
+	//logo NoiseMakers
 	PNGImageFormat logo;
 	File path("C:/Users/personnel/Desktop/INSA/5EII/PROJET INDUS/Juce/TestGUI/Source/Images/logo.png");
 	ilogo=logo.loadFrom(path);
@@ -52,7 +53,7 @@ void TestGuiAudioProcessorEditor::paint (Graphics& g)
 	g.setOpacity(1.0f);
 	g.drawImageAt(ilogo, 0, 0, false);
 	
-	
+
 }
 
 void TestGuiAudioProcessorEditor::resized()
@@ -65,7 +66,9 @@ void TestGuiAudioProcessorEditor::resized()
 
 
 void TestGuiAudioProcessorEditor::setLook() {
-	p1.look1.setColour(Slider::rotarySliderFillColourId, Colours::royalblue);
+
+	//Black, royalblue and white are used
+	p1.look1.setColour(Slider::rotarySliderFillColourId, Colours::royalblue);7
 	p1.look1.setColour(Slider::thumbColourId, Colours::royalblue);
 	p1.look1.setColour(Slider::trackColourId, Colours::royalblue);
 	p1.look1.setColour(Slider::textBoxOutlineColourId, getLookAndFeel().findColour(ResizableWindow::backgroundColourId));

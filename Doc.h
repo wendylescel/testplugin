@@ -9,6 +9,7 @@
 */
 #include "../JuceLibraryCode/JuceHeader.h"
 
+//Class doc herited from MultiDocumentPanel, definition of abstract tryToCloseDocument function 
 class Doc : public MultiDocumentPanel {
 public:
 	Doc() : MultiDocumentPanel()

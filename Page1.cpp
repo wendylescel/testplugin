@@ -28,6 +28,10 @@ Page1::Page1()
 	sl.addListener(this);
 	addAndMakeVisible(sl);
 
+	areasl = sl.getLocalBounds();
+
+
+
 	sl2.setLookAndFeel(&look1);
 	sl2.setSliderStyle(Slider::LinearHorizontal);
 	sl2.setRange(0, 50, 1);
@@ -108,6 +112,10 @@ void Page1::paint (Graphics& g)
     g.setFont (14.0f);
     g.drawText ("Page1", getLocalBounds(),
                 Justification::centredBottom, true);   // draw some placeholder text
+	g.setColour(Colours::royalblue);
+	g.fillRect(areasl);
+
+
 }
 
 void Page1::resized()
